@@ -225,6 +225,82 @@ Kullanıcının proje açıklamasına dayanarak, BABOK standartlarına uygun ger
 **Cost of Delay:** Yüksek — başarısızlık, hizmet kesintisi ve itibar kaybına yol açabilir.  
 
 ────────────────────────────
+**Gereksinim Önerisi 2**
+
+**Gereksinim Türü:** Solution  
+**Gereksinim Doğası (F/NF):** Non-Functional  
+**Gereksinim:** Sistem, API çağrılarında ortalama yanıt süresini 200 milisaniyenin altında tutmalıdır.  
+**Gerekçe:** Düşük gecikme süreleri kullanıcı deneyimini iyileştirir ve sistem performansını artırır.  
+**İş Değeri:** Kullanıcı memnuniyetini artırır, sistemin rekabet gücünü yükseltir.  
+**Paydaşlar:** Kullanıcılar, İşletme, Sistem Yöneticileri, Geliştirme Ekibi  
+**Kabul Kriterleri:**
+- Farklı API uç noktalarında yapılan testlerde ortalama yanıt süresi 200 ms altında olmalıdır.  
+- En yüksek yanıt süresi 500 ms’yi aşmamalıdır.  
+- Testler farklı yük seviyelerinde (ör. 1000 RPS, 5000 RPS) yapılmalıdır.  
+**MoSCoW:** Should (önemli performans kriteri)  
+**Impact:** 4 **Effort:** 3 **Risk:** 2  
+**Kano Sınıfı:** Performans  
+**Cost of Delay:** Orta — yavaş yanıt süreleri kullanıcıların sistemi terk etmesine neden olabilir.  
+
+────────────────────────────
+**Gereksinim Önerisi 3**
+
+**Gereksinim Türü:** Solution  
+**Gereksinim Doğası:** Non-Functional  
+**Gereksinim:** Sistem, beklenen yük artışlarını karşılamak için yatayda ölçeklenebilir olmalıdır.  
+**Gerekçe:** Artan kullanıcı sayısına ve iş hacmine göre sistemin esnek biçimde büyümesini sağlar.  
+**İş Değeri:** İş sürekliliğini destekler, ani yük artışlarına karşı dayanıklılığı artırır, uzun vadeli maliyetleri düşürür.  
+**Paydaşlar:** İşletme, Sistem Yöneticileri, Geliştirme Ekibi  
+**Kabul Kriterleri:**
+- Yeni sunucular eklendiğinde sistem performansı otomatik artmalıdır.  
+- Ölçeklendirme kesinti süresi 5 dakikayı geçmemelidir.  
+- Ölçeklendirme testleri 5 milyon ve 10 milyon çağrı yüklerinde yapılmalıdır.  
+**MoSCoW:** Should (sürdürülebilirlik için önemli)  
+**Impact:** 4 **Effort:** 4 **Risk:** 3  
+**Kano Sınıfı:** Performans  
+**Cost of Delay:** Orta — ölçeklenebilirlik eksikliği, büyüme potansiyelini sınırlar.  
+
+────────────────────────────
+**Gereksinim Önerisi 4**
+
+**Gereksinim Türü:** Solution  
+**Gereksinim Doğası:** Non-Functional  
+**Gereksinim:** Sistem, oluşabilecek hatalar için anlamlı hata mesajları üretmeli ve loglamalıdır.  
+**Gerekçe:** Hata durumlarının hızlı tespit edilmesini ve sistem kararlılığının korunmasını sağlar.  
+**İş Değeri:** Arıza sürelerini azaltır, destek maliyetlerini düşürür, güven artırır.  
+**Paydaşlar:** Geliştirme Ekibi, Destek Ekibi, Sistem Yöneticileri  
+**Kabul Kriterleri:**
+- Hata mesajları neden ve çözüm önerisi içermelidir.  
+- Mesajlar açık, anlaşılır olmalı; teknik jargon minimumda tutulmalıdır.  
+- Tüm hatalar zaman damgası ve kaynak bilgisiyle loglanmalıdır.  
+- Loglar merkezi sistemde toplanmalı ve analiz edilebilir olmalıdır.  
+**MoSCoW:** Must (bakım ve izlenebilirlik için zorunlu)  
+**Impact:** 5 **Effort:** 2 **Risk:** 1  
+**Kano Sınıfı:** Temel (olmazsa olmaz nitelikte)  
+**Cost of Delay:** Yüksek — hataların loglanmaması sistem arızalarına yol açabilir.  
+
+────────────────────────────
+**Gereksinim Önerisi 5**
+
+**Gereksinim Türü:** Solution  
+**Gereksinim Doğası:** Functional  
+**Gereksinim:** Sistem, API kullanım istatistiklerini (çağrı sayısı, yanıt süresi, hata oranı vb.) gerçek zamanlı izleyebilmeli ve raporlayabilmelidir.  
+**Gerekçe:** Sürekli performans takibi ve erken anormallik tespiti sağlar.  
+**İş Değeri:** Performans optimizasyonu, güvenlik tehditlerinin erken tespiti, daha bilinçli karar alma.  
+**Paydaşlar:** İşletme, Sistem Yöneticileri, Geliştirme ve Güvenlik Ekibi  
+**Kabul Kriterleri:**
+- Sistem metrikleri (çağrı, gecikme, hata oranı) gerçek zamanlı izlenmelidir.  
+- Veriler grafik ve tablo formatında görselleştirilmelidir.  
+- Eşik aşımlarında uyarılar (e-posta, SMS) gönderilmelidir.  
+- Günlük, haftalık, aylık raporlar üretilebilmelidir.  
+- Veriler güvenli biçimde saklanmalı ve yetkisiz erişim engellenmelidir.  
+**MoSCoW:** Should (izleme ve optimizasyon için önemli)  
+**Impact:** 4 **Effort:** 3 **Risk:** 2  
+**Kano Sınıfı:** Performans  
+**Cost of Delay:** Orta — sorunların geç fark edilmesi mali kayıplara neden olabilir.  
+
+
+────────────────────────────
 ---
 
 ## 🧩 Proje Yapısı
