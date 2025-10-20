@@ -277,11 +277,28 @@ print(rag_response_babok(test_query))
 
 ---
 
-## 👩‍💻 Geliştirici Notu
+## 🧩 Elde Edilen Sonuçlar
 
-Bu sistem, profesyonel **DEM (Digital Enterprise Model)** yaklaşımıyla tasarlanmıştır.
-BABOK prensiplerini, RAG ve LLM tabanlı modern yaklaşımlarla birleştirir.
-Kurumsal iş analizi süreçlerinde **ölçeklenebilir, otomatik ve açıklanabilir gereksinim üretimi** sağlar.
+Bu proje, yapay zekâ destekli gereksinim mühendisliğinde BABOK standartlarının otomatikleştirilebileceğini göstermiştir.
+RAG (Retrieval-Augmented Generation) mimarisi sayesinde sistem, sadece genel metin üretmekle kalmayıp, gerçek gereksinim örneklerinden öğrenerek bağlama uygun öneriler sunabilmiştir.
+
+Gemini modeli, kullanıcıdan gelen doğal dildeki proje açıklamalarını analiz ederek;
+
+- Gereksinim türü (Business, Stakeholder, Solution, Transition),
+- (Rationale),
+- (Business Value) ve
+- Acceptance Criteria)
+
+gibi alanları sistematik biçimde üretebilmiştir.
+
+Örnek senaryolarda, modelin oluşturduğu gereksinimler:
+
+- Bağlama semantik olarak uygun,
+- Türkçe dilinde doğal ve tutarlı,
+- BABOK terminolojisine uygun bulunmuştur.
+
+Sonuç olarak proje, LLM tabanlı gereksinim analizi ile vektör veri tabanı destekli bilgi çağırma yöntemlerini başarılı biçimde birleştirerek;
+gelecekte otomatik iş analizi, gereksinim kalitesi değerlendirmesi ve kurumsal bilgi yönetimi alanlarında kullanılabilecek ölçeklenebilir bir temel oluşturmuştur.
 
 ```
 
