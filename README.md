@@ -277,13 +277,6 @@ print(rag_response_babok(test_query))
 
 ---
 
-## 📘 Lisans
-
-Bu proje **MIT Lisansı** ile yayınlanmıştır.
-Katkılar açık kaynak prensiplerine uygun olmalıdır.
-
----
-
 ## 👩‍💻 Geliştirici Notu
 
 Bu sistem, profesyonel **DEM (Digital Enterprise Model)** yaklaşımıyla tasarlanmıştır.
