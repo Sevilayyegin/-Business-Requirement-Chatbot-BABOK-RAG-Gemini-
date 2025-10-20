@@ -83,7 +83,7 @@ Kaggle Dataset Linki → [PURE Annotate Dataset](https://www.kaggle.com/datasets
 Dosyayı indirdikten sonra proje dizinine şu şekilde yerleştirin:
 ```bash
 /data/Pure_Annotate_Dataset.csv
-
+````
 ---
 
 ## 📊 Veri Seti: PURE Annotate Dataset
