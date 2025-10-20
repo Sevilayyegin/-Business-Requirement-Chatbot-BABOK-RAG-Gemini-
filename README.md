@@ -1,5 +1,7 @@
 # 🔹 BABOK + RAG + Gemini Tabanlı Business Requirement Chatbot
+
 Gemini LLM + ChromaDB + Gradio altyapısıyla çalışan bir Business Requirement Chatbot
+
 ---
 ## 🎯 Projenin Amacı
 
