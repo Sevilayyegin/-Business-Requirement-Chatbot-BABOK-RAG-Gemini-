@@ -28,26 +28,17 @@ Kısaca, bu chatbot bir iş analistinin yaptığı “gereksinim çıkarımı, a
 > 💡 Şema: Kullanıcı → Embedding (Gemini) → ChromaDB (RAG) → LLM (Gemini) → BABOK Uyumlu Gereksinim → Önceliklendirme (RICE / WSJF) → Gradio Arayüzü
 
 
-| Katman | Açıklama |
-|:-----------------------|:--------------------------------------------------------------------------------------------|
-| **Gemini (LLM)** | Gereksinimleri anlamlandırır ve BABOK uyumlu metin üretir. |
-| **PURE Annotate Dataset** | Modelin eğitildiği veya örnekleme yaptığı kamuya açık gereksinim verisidir. |
-| **ChromaDB** | Gereksinim verilerini vektör biçiminde depolar, benzerlik araması sağlar. |
-| **RAG Pipeline** | Sorgudan bilgi getirir (**Retrieval**) ve Gemini ile çıktı üretir (**Generation**). |
-| **Gradio** | Kullanıcı dostu bir arayüz sağlar. |
+## 🧩 Sistem Katmanları ve Kullanılan Teknolojiler
 
----
-
-## ⚙️ Kullanılan Teknolojiler
-
-| Katman | Teknoloji |
-|--------|------------|
-| 🤖 LLM | Google Gemini (1.5 Flash / Pro) |
-| 🔡 Embedding | text-embedding-004 |
-| 🧠 Vektör Veritabanı | ChromaDB |
-| 🧰 Framework | Python 3.10+, Gradio, dotenv, pandas |
-| 📊 Önceliklendirme | RICE & WSJF Modelleri |
-| 📘 Veri Kümesi | PURE Annotate Dataset (Kaggle) |
+| Katman | Teknoloji | Açıklama |
+|:----------------------|:---------------------------|:--------------------------------------------------------------------------------------------|
+| 🤖 **Gemini (LLM)** | Google Gemini (1.5 Flash / Pro) | Gereksinimleri anlamlandırır ve BABOK uyumlu metin üretir. |
+| 🧠 **PURE Annotate Dataset** | Kaggle (Açık veri kümesi) | Modelin eğitildiği veya örnekleme yaptığı kamuya açık gereksinim verisidir. |
+| 📊 **ChromaDB** | Vektör Veritabanı | Gereksinim verilerini vektör biçiminde depolar, benzerlik araması sağlar. |
+| 🔁 **RAG Pipeline** | text-embedding-004 + Gemini | Sorgudan bilgi getirir (**Retrieval**) ve Gemini ile çıktı üretir (**Generation**). |
+| 🧰 **Framework** | Python 3.10+, pandas, dotenv, gradio | Modelin altyapısını ve veri işleme akışını sağlar. |
+| ⚖️ **Önceliklendirme** | RICE & WSJF Modelleri | Gereksinimlerin iş değerine göre sıralanmasını sağlar. |
+| 💬 **Gradio Arayüzü** | Gradio | Kullanıcı dostu bir web arayüzü sunar. |
 
 ---
 
