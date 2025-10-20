@@ -91,15 +91,9 @@ Her satır bir gereksinimi temsil eder:
 * Functional → “System shall export reports in PDF.”
 * Non-Functional → “System shall encrypt user data at rest.”
 
-Veri ön işleme adımları:
-
-* Temizlik, benzersizleştirme, kısa metinlerin elenmesi
-* Fonksiyonel / Fonksiyonel olmayan sınıflandırma (etiketli veya heuristik)
-* Embedding tablosu oluşturma
-
-```python
-df_clean["nfr"] = df_clean["sentence"].str.lower().str.contains(nfr_pat).astype(int)
-```
+Etiketleme Mantığı
+- NFR_boolean = 0: Bu gereksinim işlevsel (Functional Requirement) olarak yorumlanır.
+- NFR_boolean = 1: Bu gereksinim işlevsel olmayan (Non-Functional Requirement) olup kalite, güvenlik, performans gibi unsurları kapsar.
 
 ---
 
@@ -143,6 +137,33 @@ Model, aşağıdaki şablona göre çıktı üretir:
 
 ---
 
+## 📘 BABOK Uyumlu Çıktı Formatı
+Her yanıt aşağıdaki alanları içeren yapısal bir çıktı üretir:
+
+Gereksinim Türü: Solution
+Gereksinim Doğası (F/NF): Non-Functional
+Gereksinim: Sistem tüm müşteri verilerini AES-256 ile şifrelemelidir.
+Rationale: Veri gizliliği ve regülasyon uyumu için.
+Business Value: Yüksek
+Stakeholders: Güvenlik Ekibi, BT, Uyumluluk
+Acceptance Criteria: Tüm verilerin KVKK ve PCI-DSS standartlarına uygun olarak şifrelenmesi
+MoSCoW: Must (Regülasyon gereği)
+Impact: 4 | Effort: 3 | Risk: 5
+Kano: Temel Gereksinim (Zorunlu güvenlik önlemi)
+Cost of Delay: Veri sızıntısı riski → Çok yüksek maliyet
+
+---
+
+## 📊 Önceliklendirme Modülleri
+Proje iki farklı metrik kullanarak öncelik belirler:
+
+Metrik  |  Formül                                                           |  Amaç                                                       
+--------+-------------------------------------------------------------------+-------------------------------------------------------------
+RICE    |  (Reach × Impact × Confidence) / Effort                           |  Genellikle kullanıcı erişimi ve etkisine göre puanlama     
+WSJF    |  (Business Value + Time Criticality + Risk Reduction) / Job Size  |  Ekonomik değer, risk azaltma ve süre baskısını hesaba katar
+
+---
+
 ## 📈 Gereksinim Önceliklendirme Modülü
 
 Gereksinimler, otomatik olarak **RICE** ve **WSJF** metriklerine göre puanlanır.
@@ -175,6 +196,9 @@ Bu sayede model hem veriye dayalı hem de yaratıcı içerik üretir.
 ## 💬 Gradio Arayüzü
 
 Gradio, kullanıcıdan proje açıklamasını alıp modeli çalıştırır.
+- Kullanıcı metin kutusuna proje açıklamasını girer.
+- Chatbot, sorguya özel BABOK uyumlu gereksinim önerileri döndürür.
+- Çıktılar Markdown biçiminde yapılandırılmıştır.
 
 ```python
 demo = gr.Interface(
@@ -193,6 +217,19 @@ python app.py
 ```
 
 ---
+
+##💡 Model Akışı
+Kullanıcı metin girişi sağlar (örneğin: “Sistem kullanıcı verilerini şifrelemelidir.”)
+
+Metin Gemini tarafından embedding’e dönüştürülür.
+
+ChromaDB’den en benzer gereksinimler semantik olarak getirilir.
+
+Sistem sorguyu F/NF olarak sınıflandırır.
+
+Gemini, BABOK formatında gereksinim raporu üretir.
+
+Gereksinim RICE ve WSJF metrikleriyle önceliklendirilir.
 
 ## 🧪 Test Çalışması
 
