@@ -27,13 +27,13 @@ Kısaca, bu chatbot bir iş analistinin yaptığı “gereksinim çıkarımı, a
 
 > 💡 Şema: Kullanıcı → Embedding (Gemini) → ChromaDB (RAG) → LLM (Gemini) → BABOK Uyumlu Gereksinim → Önceliklendirme (RICE / WSJF) → Gradio Arayüzü
 
-Katman                 |  Açıklama                                                                   
+| Katman                 |  Açıklama      |                                                             
 -----------------------+-----------------------------------------------------------------------------
-Gemini (LLM)           |  Gereksinimleri anlamlandırır ve BABOK uyumlu metin üretir.                 
-PURE Annotate Dataset  |  Modelin eğitildiği veya örnekleme yaptığı kamuya açık gereksinim verisidir.
-ChromaDB               |  Gereksinim verilerini vektör biçiminde depolar, benzerlik araması sağlar.  
-RAG Pipeline           |  Sorgudan bilgi getirir (Retrieval) ve Gemini ile çıktı üretir (Generation).
-Gradio                 |  Kullanıcı dostu arayüz sağlar.                                             
+| Gemini (LLM)           |  Gereksinimleri anlamlandırır ve BABOK uyumlu metin üretir.   |              
+| PURE Annotate Dataset  |  Modelin eğitildiği veya örnekleme yaptığı kamuya açık gereksinim verisidir.|
+| ChromaDB               |  Gereksinim verilerini vektör biçiminde depolar, benzerlik araması sağlar.  |
+| RAG Pipeline           |  Sorgudan bilgi getirir (Retrieval) ve Gemini ile çıktı üretir (Generation).|
+| Gradio                 |  Kullanıcı dostu arayüz sağlar.       |                                      
 ---
 
 ## ⚙️ Kullanılan Teknolojiler
@@ -157,10 +157,10 @@ Cost of Delay: Veri sızıntısı riski → Çok yüksek maliyet
 ## 📊 Önceliklendirme Modülleri
 Proje iki farklı metrik kullanarak öncelik belirler:
 
-Metrik  |  Formül                                                           |  Amaç                                                       
+|Metrik  |  Formül                                                           |  Amaç                                                       |
 --------+-------------------------------------------------------------------+-------------------------------------------------------------
-RICE    |  (Reach × Impact × Confidence) / Effort                           |  Genellikle kullanıcı erişimi ve etkisine göre puanlama     
-WSJF    |  (Business Value + Time Criticality + Risk Reduction) / Job Size  |  Ekonomik değer, risk azaltma ve süre baskısını hesaba katar
+|RICE    |  (Reach × Impact × Confidence) / Effort                           |  Genellikle kullanıcı erişimi ve etkisine göre puanlama     |
+|WSJF    |  (Business Value + Time Criticality + Risk Reduction) / Job Size  |  Ekonomik değer, risk azaltma ve süre baskısını hesaba katar|
 
 ---
 
