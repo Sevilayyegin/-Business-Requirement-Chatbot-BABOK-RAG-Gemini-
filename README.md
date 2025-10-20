@@ -28,14 +28,13 @@ Kısaca, bu chatbot bir iş analistinin yaptığı “gereksinim çıkarımı, a
 > 💡 Şema: Kullanıcı → Embedding (Gemini) → ChromaDB (RAG) → LLM (Gemini) → BABOK Uyumlu Gereksinim → Önceliklendirme (RICE / WSJF) → Gradio Arayüzü
 
 
-
-| Katman                 |  Açıklama      |                                                             
------------------------+-----------------------------------------------------------------------------
-| Gemini (LLM)           |  Gereksinimleri anlamlandırır ve BABOK uyumlu metin üretir.   |              
-| PURE Annotate Dataset  |  Modelin eğitildiği veya örnekleme yaptığı kamuya açık gereksinim verisidir.|
-| ChromaDB               |  Gereksinim verilerini vektör biçiminde depolar, benzerlik araması sağlar.  |
-| RAG Pipeline           |  Sorgudan bilgi getirir (Retrieval) ve Gemini ile çıktı üretir (Generation).|
-| Gradio                 |  Kullanıcı dostu arayüz sağlar.       |                                      
+| Katman | Açıklama |
+|:-----------------------|:--------------------------------------------------------------------------------------------|
+| **Gemini (LLM)** | Gereksinimleri anlamlandırır ve BABOK uyumlu metin üretir. |
+| **PURE Annotate Dataset** | Modelin eğitildiği veya örnekleme yaptığı kamuya açık gereksinim verisidir. |
+| **ChromaDB** | Gereksinim verilerini vektör biçiminde depolar, benzerlik araması sağlar. |
+| **RAG Pipeline** | Sorgudan bilgi getirir (**Retrieval**) ve Gemini ile çıktı üretir (**Generation**). |
+| **Gradio** | Kullanıcı dostu bir arayüz sağlar. |
 
 ---
 
