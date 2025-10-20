@@ -11,10 +11,10 @@ Klasik gereksinim mühendisliği süreçlerinde manuel olarak yapılan analizler
 
 ### Sistem Özeti
 
-🧠 **Veri temelli (RAG destekli)** — Bilgi tabanı üzerinde benzer gereksinimleri bulur.
-📘 **Uluslararası standartlara uygun (BABOK)** — BABOK alanlarına göre yapılandırılmış çıktılar üretir.
-⚙️ **Ölçeklenebilir (ChromaDB + Gemini)** — Büyük ölçekli verilerde semantik arama ve üretim yapabilir.
-💬 **Kullanıcı dostu (Gradio arayüzü)** — İş analistleri için kolay, etkileşimli bir arayüz sağlar.
+- 🧠 **Veri temelli (RAG destekli)** — Bilgi tabanı üzerinde benzer gereksinimleri bulur.
+- 📘 **Uluslararası standartlara uygun (BABOK)** — BABOK alanlarına göre yapılandırılmış çıktılar üretir.
+- ⚙️ **Ölçeklenebilir (ChromaDB + Gemini)** — Büyük ölçekli verilerde semantik arama ve üretim yapabilir.
+- 💬 **Kullanıcı dostu (Gradio arayüzü)** — İş analistleri için kolay, etkileşimli bir arayüz sağlar.
 
 Kısaca sistem, bir iş analistinin yaptığı şu görevleri **otomatikleştirir**:
 
