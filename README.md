@@ -277,6 +277,12 @@ print(rag_response_babok(test_query))
 
 ---
 
+📘 Lisans
+
+Bu proje MIT Lisansı altında yayınlanmıştır.
+
+---
+
 ## 🧩 Elde Edilen Sonuçlar
 
 Bu proje, yapay zekâ destekli gereksinim mühendisliğinde BABOK standartlarının otomatikleştirilebileceğini göstermiştir.
