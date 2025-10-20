@@ -1,43 +1,3 @@
-# 🤖  Business Requirement Chatbot (BABOK + RAG + Gemini)
-
-Bu proje, iş analizi sürecinde gereksinimlerin tanımlanması, sınıflandırılması ve önceliklendirilmesini otomatikleştirmek için geliştirilmiştir.
- Geleneksel olarak saatler süren gereksinim dokümantasyonu artık birkaç saniye içinde otomatik üretilmektedir.
-
-Sistem:
-
--  Veri temelli (RAG destekli),
-- Uluslararası standartlara uygun (BABOK),
-- Ölçeklenebilir (ChromaDB + Gemini),
-- Ve kullanıcı dostu (Gradio arayüzü) bir çözümdür.
-
-Yapay zekâ ve veri tabanı tekniklerini bir araya getirerek, kullanıcıdan alınan proje açıklamasına göre:
-
-- Gereksinimin Functional (işlevsel) mi yoksa Non-Functional (işlevsel olmayan) mı olduğunu tahmin eder,
-- BABOK (Business Analysis Body of Knowledge) standartlarına göre gereksinim dokümanı üretir
-- Gereksinimlerin önemini RICE ve WSJF gibi metriklerle önceliklendirir
-- Kullanıcıya kolay ve interaktif bir arayüz sunar.
-Kısaca bu chatbot, bir iş analistinin yaptığı “gereksinim çıkarımı, analizi ve dokümantasyon” sürecini kısmen otomatikleştirir.
-
----
-
-## 🏗️ Mimarî Genel Bakış
-
-Sistemin genel akışı aşağıdaki diyagramda gösterilmektedir:
-
-![architecture](Business%20Requirement%20Chatbot.png)
-
-&gt; Diyagram akışı: **Kullanıcı → Embedding &amp; ChromaDB → Gemini LLM (RAG) → BABOK Formatı → Önceliklendirme → Gradio Arayüzü**
-
----
-
-Harika Sevilay 🌟
-Senin paylaştığın Kaggle koduna ve örnek GitHub deposu yapısına ([gokerguner/gaih-genai-bootcamp](https://github.com/gokerguner/gaih-genai-bootcamp)) göre, **profesyonel ve tam GitHub uyumlu** bir `README.md` dosyası aşağıda hazırlanmıştır.
-
-Bunu **doğrudan kopyalayıp kendi GitHub projenin README.md alanına yapıştırabilirsin** —
-başlıklar, tablo biçimleri, kod blokları, açıklamalar ve emoji stilleri GitHub’da hatasız şekilde render olur.
---------------------------------------------------------------------------------------------------------------
-
-
 # 🔹 BABOK + RAG + Gemini Tabanlı Business Requirement Chatbot
 ---
 ## 🎯 Projenin Amacı
@@ -61,12 +21,19 @@ Kısaca, bu chatbot bir iş analistinin yaptığı “gereksinim çıkarımı, a
 
 ---
 
-## 🧩 Mimarî Genel Bakış
+## 🧩 Mimarî Bileşenler
 
 ![architecture](Business%20Requirement%20Chatbot.png)
 
 > 💡 Şema: Kullanıcı → Embedding (Gemini) → ChromaDB (RAG) → LLM (Gemini) → BABOK Uyumlu Gereksinim → Önceliklendirme (RICE / WSJF) → Gradio Arayüzü
 
+Katman                 |  Açıklama                                                                   
+-----------------------+-----------------------------------------------------------------------------
+Gemini (LLM)           |  Gereksinimleri anlamlandırır ve BABOK uyumlu metin üretir.                 
+PURE Annotate Dataset  |  Modelin eğitildiği veya örnekleme yaptığı kamuya açık gereksinim verisidir.
+ChromaDB               |  Gereksinim verilerini vektör biçiminde depolar, benzerlik araması sağlar.  
+RAG Pipeline           |  Sorgudan bilgi getirir (Retrieval) ve Gemini ile çıktı üretir (Generation).
+Gradio                 |  Kullanıcı dostu arayüz sağlar.                                             
 ---
 
 ## ⚙️ Kullanılan Teknolojiler
