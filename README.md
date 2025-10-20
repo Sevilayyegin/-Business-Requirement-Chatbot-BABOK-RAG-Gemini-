@@ -171,6 +171,7 @@ Proje iki farklı metrik kullanarak öncelik belirler:
 
 🔹 **RICE** modeli genellikle ürün özelliklerinin etki ve erişimine göre sıralama yaparken,  
 🔹 **WSJF (Weighted Shortest Job First)** yaklaşımı ekonomik değer ve zaman kritikliğine göre optimizasyon sağlar.  
+
 ---
 
 ## 📈 Gereksinim Önceliklendirme Modülü
@@ -207,7 +208,6 @@ Bu sayede model hem veriye dayalı hem de yaratıcı içerik üretir.
 Gradio, kullanıcıdan proje açıklamasını alıp modeli çalıştırır.
 - Kullanıcı metin kutusuna proje açıklamasını girer.
 - Chatbot, sorguya özel BABOK uyumlu gereksinim önerileri döndürür.
-- Çıktılar Markdown biçiminde yapılandırılmıştır.
 
 ```python
 demo = gr.Interface(
@@ -227,18 +227,15 @@ python app.py
 
 ---
 
-##💡 Model Akışı
-Kullanıcı metin girişi sağlar (örneğin: “Sistem kullanıcı verilerini şifrelemelidir.”)
-
-Metin Gemini tarafından embedding’e dönüştürülür.
-
-ChromaDB’den en benzer gereksinimler semantik olarak getirilir.
-
-Sistem sorguyu F/NF olarak sınıflandırır.
-
-Gemini, BABOK formatında gereksinim raporu üretir.
-
-Gereksinim RICE ve WSJF metrikleriyle önceliklendirilir.
+## 🎯 Örnek Sorular
+"Kullanıcı cep telefonundan para transferi yapabilmeli ve IBAN kaydedebilmeli",
+"Sistem en yoğun saatte ortalama 2 saniye altında yanıt vermeli",
+"Tüm müşteri verileri dinamik ve durağan halde şifrelenmeli",
+"Rol tabanlı erişim kontrolü uygulanmalı ve ince taneli yetkilendirme olmalı",
+"Mobil uygulama WCAG 2.1 AA erişilebilirlik kriterlerini sağlamalı",
+"Hata mesajları kullanıcı dostu olmalı ve teknik detay sızdırmamalı",
+"Raporlama modülü PDF/CSV dışa aktarımı ve zamanlanmış e-posta gönderimini desteklemeli",
+"Sistem başarısız girişlerde hesabı geçici kilitlemeli ve MFA'yı zorunlu kılmalı"
 
 ## 🧪 Test Çalışması
 
