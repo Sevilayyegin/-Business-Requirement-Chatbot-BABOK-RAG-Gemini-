@@ -199,11 +199,32 @@ print(rag_response_babok(test_query))
 
 📈 Model çıktısı:
 
-* Gereksinim Doğası: Non-Functional
-* RICE Skoru: 44.8
-* WSJF Skoru: 5.1
-* BABOK uyumlu gereksinim: “Sistem saniyede 60.000 istek işleyebilmeli, ortalama gecikme 200 ms altında olmalıdır.”
+🚀 TEST ÇALIŞTIRILIYOR...
+📝 Sorgu: Günlük 5 milyon API çağrısını %99.9 başarı ile işleyebilmelidir.
 
+📘 Örnek Çıktı:
+
+Kullanıcının proje açıklamasına dayanarak, BABOK standartlarına uygun gereksinim önerileri aşağıda listelenmiştir:
+
+────────────────────────────
+**Gereksinim Önerisi 1**
+
+**Gereksinim Türü:** Solution  
+**Gereksinim Doğası (F/NF):** Non-Functional  
+**Gereksinim:** Sistem, günlük ortalama 5 milyon API çağrısını %99.9 başarı oranıyla işleyebilmelidir.  
+**Gerekçe (Rationale):** Belirtilen başarı oranı ve çağrı sayısı, sistemin kabul edilebilir performans ve güvenilirlik düzeyini tanımlar.  
+**İş Değeri (Business Value):** Kullanıcı memnuniyetini ve sistem güvenilirliğini artırır, iş sürekliliğini sağlar.  
+**Paydaşlar (Stakeholders):** Kullanıcılar, İşletme, Sistem Yöneticileri, Geliştirme Ekibi, Destek Ekibi  
+**Kabul Kriterleri (Acceptance Criteria):**
+- Sistem, 24 saatlik test süresince 5 milyon API çağrısını %99.9 başarıyla tamamlamalıdır.  
+- Başarısız çağrılar loglanmalı ve hata nedenleri analiz edilebilir olmalıdır.  
+- Testler, gerçek kullanım senaryolarına göre gerçekleştirilmelidir.  
+**MoSCoW:** Must (temel performans gereksinimi)  
+**Impact:** 5 **Effort:** 4 **Risk:** 3  
+**Kano Sınıfı:** Performans (Başarı oranı yükseldikçe kullanıcı memnuniyeti artar)  
+**Cost of Delay:** Yüksek — başarısızlık, hizmet kesintisi ve itibar kaybına yol açabilir.  
+
+────────────────────────────
 ---
 
 ## 🧩 Proje Yapısı
