@@ -148,13 +148,18 @@ Cost of Delay: Veri sızıntısı riski → Çok yüksek maliyet
 ---
 
 ## 📊 Önceliklendirme Modülleri
+
 Proje iki farklı metrik kullanarak öncelik belirler:
 
-|Metrik  |  Formül                                                           |  Amaç                                                       |
---------+-------------------------------------------------------------------+-------------------------------------------------------------
-|RICE    |  (Reach × Impact × Confidence) / Effort                           |  Genellikle kullanıcı erişimi ve etkisine göre puanlama     |
-|WSJF    |  (Business Value + Time Criticality + Risk Reduction) / Job Size  |  Ekonomik değer, risk azaltma ve süre baskısını hesaba katar|
+| Metrik | Formül | Amaç |
+|:--------|:--------------------------------------------------------------|:---------------------------------------------------------------|
+| **RICE** | (Reach × Impact × Confidence) / Effort | Kullanıcı erişimi, etkisi ve güven düzeyine göre öncelik puanı hesaplar. |
+| **WSJF** | (Business Value + Time Criticality + Risk Reduction) / Job Size | Ekonomik değer, zaman baskısı ve risk azaltmayı dikkate alarak iş sırasını belirler. |
 
+---
+
+🔹 **RICE** modeli genellikle ürün özelliklerinin etki ve erişimine göre sıralama yaparken,  
+🔹 **WSJF (Weighted Shortest Job First)** yaklaşımı ekonomik değer ve zaman kritikliğine göre optimizasyon sağlar.  
 ---
 
 ## 📈 Gereksinim Önceliklendirme Modülü
