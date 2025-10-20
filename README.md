@@ -24,9 +24,8 @@ Kısaca bu chatbot, bir iş analistinin yaptığı “gereksinim çıkarımı, a
 
 Sistemin genel akışı aşağıdaki diyagramda gösterilmektedir:
 
-![chatbot diagram](Business Requirement Chatbot.png)
+![architecture](Business%20Requirement%20Chatbot.png)
 
-&gt; 💡 Not: `docs/architecture.png` görselini kendi deposuna yükleyip yolu doğru ayarlaman yeterlidir.  
 &gt; Diyagram akışı: **Kullanıcı → Embedding &amp; ChromaDB → Gemini LLM (RAG) → BABOK Formatı → Önceliklendirme → Gradio Arayüzü**
 
 ---
