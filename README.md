@@ -131,19 +131,30 @@ Model, aşağıdaki şablona göre çıktı üretir:
 ---
 
 ## 📘 BABOK Uyumlu Çıktı Formatı
-Her yanıt aşağıdaki alanları içeren yapısal bir çıktı üretir:
 
-Gereksinim Türü: Solution
-Gereksinim Doğası (F/NF): Non-Functional
-Gereksinim: Sistem tüm müşteri verilerini AES-256 ile şifrelemelidir.
-Rationale: Veri gizliliği ve regülasyon uyumu için.
-Business Value: Yüksek
-Stakeholders: Güvenlik Ekibi, BT, Uyumluluk
-Acceptance Criteria: Tüm verilerin KVKK ve PCI-DSS standartlarına uygun olarak şifrelenmesi
-MoSCoW: Must (Regülasyon gereği)
-Impact: 4 | Effort: 3 | Risk: 5
-Kano: Temel Gereksinim (Zorunlu güvenlik önlemi)
-Cost of Delay: Veri sızıntısı riski → Çok yüksek maliyet
+Her yanıt, **BABOK (Business Analysis Body of Knowledge)** rehberine göre yapılandırılmış gereksinim alanlarını içerir.
+
+---
+
+| Alan | Açıklama / Örnek |
+|:------------------------------|:---------------------------------------------------------------|
+| **Gereksinim Türü** | Solution |
+| **Gereksinim Doğası (F/NF)** | Non-Functional |
+| **Gereksinim** | Sistem tüm müşteri verilerini **AES-256** ile şifrelemelidir. |
+| **Rationale (Gerekçe)** | Veri gizliliği ve regülasyon uyumu için. |
+| **Business Value** | Yüksek |
+| **Stakeholders (Paydaşlar)** | Güvenlik Ekibi, BT, Uyumluluk |
+| **Acceptance Criteria (Kabul Kriteri)** | Tüm verilerin **KVKK** ve **PCI-DSS** standartlarına uygun olarak şifrelenmesi. |
+| **MoSCoW Önceliği** | Must *(Regülasyon gereği)* |
+| **Impact / Effort / Risk** | Impact: 4 • Effort: 3 • Risk: 5 |
+| **Kano Kategorisi** | Temel Gereksinim *(Zorunlu güvenlik önlemi)* |
+| **Cost of Delay (Gecikme Maliyeti)** | Veri sızıntısı riski → **Çok yüksek maliyet** |
+
+---
+
+💡 **Not:**  
+Bu format, RAG (Retrieval-Augmented Generation) yaklaşımıyla elde edilen gereksinimlerin,  
+**BABOK** standardında izlenebilir ve ölçülebilir hale getirilmesini sağlar.
 
 ---
 
