@@ -229,16 +229,33 @@ Bu proje MIT Lisansı altında yayınlanmıştır.
 
 ## 🧠 Sonuç ve Değerlendirme
 
-Bu proje, BABOK temelli iş analizi yöntemleriyle yapay zekâ teknolojilerini birleştirerek gereksinim mühendisliğini yarı otomatik hale getirmeyi başarmıştır.
+Bu proje, yapay zekâ destekli gereksinim mühendisliği alanında BABOK (Business Analysis Body of Knowledge) standartlarının sistematik biçimde uygulanabileceğini göstermiştir.
 
-RAG (Retrieval-Augmented Generation) yapısı sayesinde:
+Geleneksel olarak iş analistlerinin yürüttüğü gereksinim tanımlama, sınıflandırma ve önceliklendirme süreçleri; bu proje ile LLM tabanlı otomasyon ve veri odaklı analiz yaklaşımıyla birleştirilmiştir.
 
-Gereksinim dokümantasyonu hızlanmış,
+Başlıca Bulgular:
 
-Tutarlılık ve izlenebilirlik sağlanmış,
+- RAG (Retrieval-Augmented Generation) mimarisi, gereksinimlerin yalnızca metinsel olarak değil, bağlamsal ve semantik yakınlığa göre analiz edilmesini sağlamıştır.
+- Gemini LLM modeli, kullanıcının doğal dilde ifade ettiği proje açıklamalarını BABOK uyumlu gereksinim alanlarına dönüştürebilmiştir.
+- Üretilen çıktılar, Business / Stakeholder / Solution / Transition gereksinim türleriyle uyumlu ve izlenebilir niteliktedir.
 
-LLM çıktıları bağlama duyarlı hale getirilmiştir.
+Katma Değer:
 
-Proje, gelecekte kurumsal bilgi yönetimi, proje planlama ve otomatik gereksinim izleme sistemlerinde ölçeklenebilir bir temel olarak kullanılabilir.
+Bu sistem, iş analizi disiplininde:
+
+- Gereksinim kalitesi ve tutarlılığının artırılmasına,
+- Önceliklendirme kararlarının nesnelleştirilmesine,
+- Kurumsal bilgi tabanlarının ölçeklenebilir ve yeniden kullanılabilir hâle getirilmesine katkı sağlamaktadır.
+
+Akademik ve Endüstriyel Perspektif:
+
+Proje, gereksinim mühendisliği ve LLM tabanlı bilgi yönetimi arasında köprü kurarak, gelecekte:
+
+- Otomatik gereksinim doğrulama,
+- Tutarlılık ve bağımlılık analizi,
+- Kurumsal bilgi tabanı entegrasyonu
+konularında genişletilebilir bir temel sunmaktadır.
+
+Sonuç olarak, proje BABOK prensipleri, RAG yaklaşımı ve Gemini LLM birleşimiyle, yapay zekânın iş analizi süreçlerinde stratejik bir ortak olarak kullanılabileceğini başarıyla ortaya koymuştur.
 
 ```
