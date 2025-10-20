@@ -30,88 +30,242 @@ Sistemin genel akışı aşağıdaki diyagramda gösterilmektedir:
 
 ---
 
+Harika Sevilay 🌟
+Senin paylaştığın Kaggle koduna ve örnek GitHub deposu yapısına ([gokerguner/gaih-genai-bootcamp](https://github.com/gokerguner/gaih-genai-bootcamp)) göre, **profesyonel ve tam GitHub uyumlu** bir `README.md` dosyası aşağıda hazırlanmıştır.
+
+Bunu **doğrudan kopyalayıp kendi GitHub projenin README.md alanına yapıştırabilirsin** —
+başlıklar, tablo biçimleri, kod blokları, açıklamalar ve emoji stilleri GitHub’da hatasız şekilde render olur.
+--------------------------------------------------------------------------------------------------------------
+
+
+# 🔹 BABOK + RAG + Gemini Tabanlı Business Requirement Chatbot
+---
+## 🎯 Projenin Amacı
+
+Bu proje, iş analizi sürecinde **gereksinimlerin tanımlanması, sınıflandırılması ve önceliklendirilmesini otomatikleştirmek** için geliştirilmiştir.  
+Geleneksel olarak saatler süren gereksinim dokümantasyonu artık birkaç saniye içinde otomatik üretilmektedir.
+
+### Sistem Özellikleri:
+- 🧠 **Veri temelli (RAG destekli)**
+- 📘 **Uluslararası standartlara uygun (BABOK)**
+- ⚙️ **Ölçeklenebilir (ChromaDB + Gemini)**
+- 💬 **Kullanıcı dostu (Gradio arayüzü)**
+
+Yapay zekâ ve veri tabanı tekniklerini bir araya getirerek sistem:
+- Gereksinimin **Functional** veya **Non-Functional** olduğunu tahmin eder,  
+- **BABOK** standartlarına göre gereksinim dokümanı üretir,  
+- **RICE** ve **WSJF** metrikleriyle önceliklendirme yapar,  
+- Etkileşimli bir **Gradio** arayüzü üzerinden kullanıcıya sunar.  
+
+Kısaca, bu chatbot bir iş analistinin yaptığı “gereksinim çıkarımı, analizi ve dokümantasyon” sürecini kısmen otomatikleştirir.
+
+---
+
+## 🧩 Mimarî Genel Bakış
+
+![architecture](Business%20Requirement%20Chatbot.png)
+
+> 💡 Şema: Kullanıcı → Embedding (Gemini) → ChromaDB (RAG) → LLM (Gemini) → BABOK Uyumlu Gereksinim → Önceliklendirme (RICE / WSJF) → Gradio Arayüzü
+
+---
+
 ## ⚙️ Kullanılan Teknolojiler
 
 | Katman | Teknoloji |
 |--------|------------|
-| 🤖 LLM | Google Gemini 1.5 Flash / Pro |
+| 🤖 LLM | Google Gemini (1.5 Flash / Pro) |
 | 🔡 Embedding | text-embedding-004 |
 | 🧠 Vektör Veritabanı | ChromaDB |
-| 🧰 Framework | Python 3.10+, pandas, gradio, dotenv |
-| 📊 Önceliklendirme | RICE &amp; WSJF modelleri |
-| 📘 Bilgi Kaynağı | PURE Annotate Dataset (Kaggle) |
+| 🧰 Framework | Python 3.10+, Gradio, dotenv, pandas |
+| 📊 Önceliklendirme | RICE & WSJF Modelleri |
+| 📘 Veri Kümesi | PURE Annotate Dataset (Kaggle) |
 
 ---
 
-## 🚀 Kurulum ve Çalıştırma
+## 🚀 Kurulum
 
 ### 1️⃣ Gerekli Paketleri Yükle
-pip install -q "chromadb&gt;=0.5.0" "google-generativeai&gt;=0.7.2" "python-dotenv&gt;=1.0.1" "gradio&gt;=4.41.0"
-</code></pre>
-<h3>2️⃣ API Anahtarını Ayarla</h3>
-<p><code inline="">.env</code> dosyanı oluştur ve içine aşağıdakini ekle:</p>
-<pre><code class="language-bash">GOOGLE_API_KEY="senin_api_anahtarın"
-</code></pre>
-<h3>3️⃣ Uygulamayı Çalıştır</h3>
-<pre><code class="language-bash">python app.py
-</code></pre>
-<p>Tarayıcıda şu adrese giderek arayüzü aç:</p>
-<pre><code>http://127.0.0.1:7860
-</code></pre>
-<hr>
-<h2>💬 Örnek Kullanım</h2>
-<p>Kullanıcı bir iş fikri veya proje tanımı girer.<br>
-Model, bu girdiyi işleyerek:</p>
-<ul>
-<li>
-<p><strong>BABOK formatında gereksinim dokümanı</strong></p>
-</li>
-<li>
-<p><strong>Önceliklendirme tablosu (RICE &amp; WSJF)</strong></p>
-</li>
-<li>
-<p>ve <strong>otomatik özet</strong> çıktıları üretir.</p>
-</li>
-</ul>
-<hr>
-<h2>🧩 Modül Yapısı</h2>
-<pre><code>📦 business-requirement-chatbot/
- ┣ 📂 data/
- ┃ ┗ PURE_annotate.json         → Gereksinim veri kümesi
- ┣ 📂 src/
- ┃ ┣ embeddings.py              → Embedding ve ChromaDB işlemleri
- ┃ ┣ generator.py               → Gemini LLM RAG entegrasyonu
- ┃ ┣ prioritization.py          → RICE ve WSJF hesaplamaları
- ┃ ┗ ui.py                      → Gradio arayüzü
- ┣ app.py                       → Uygulama ana dosyası
- ┣ .env.example                 → Ortam değişkeni örneği
- ┗ README.md
-</code></pre>
-<hr>
-<h2>🧠 BABOK Uyumlu Çıktı Formatı</h2>
-<p>Üretilen gereksinim dokümanları aşağıdaki bileşenleri içerir:</p>
+```bash
+pip install -q "chromadb>=0.5.0" "google-generativeai>=0.7.2" "python-dotenv>=1.0.1" "gradio>=4.41.0" "pandas>=2.1.0"
+````
 
-Bölüm | Açıklama
--- | --
-🎯 Business Need | İş probleminin veya fırsatın tanımı
-🧩 Stakeholder Requirements | İlgili tarafların beklentileri
-⚙️ Solution Requirements | Fonksiyonel ve fonksiyonel olmayan gereksinimler
-📈 Transition Requirements | Mevcut durumdan hedef duruma geçiş koşulları
-🔢 Prioritization | RICE ve WSJF skorlarına göre sıralama
+> 💡 Colab veya Kaggle kullanıyorsan ayrıca:
+>
+> ```bash
+> !pip install -q --upgrade "google-generativeai>=0.7.2"
+> ```
 
-
-<hr>
-<h2>🧪 Test &amp; Değerlendirme</h2>
-<pre><code class="language-bash">pytest tests/
-</code></pre>
-<p>Testler, embedding doğruluğunu, RAG çıktısının tutarlılığını ve LLM cevabının BABOK yapısına uygunluğunu kontrol eder.</p>
-<hr>
-<h2>📘 Lisans</h2>
-<p>Bu proje <strong>MIT Lisansı</strong> altında yayınlanmıştır.<br>
-Tüm katkılar açık kaynak topluluk ilkelerine uygun olmalıdır.</p>
-<hr>
-<h2>👩‍💻 Geliştirici Notu</h2>
-<p>Bu prototip, <strong>iş analizi süreçlerini otomatikleştirmek</strong> ve <strong>LLM tabanlı gereksinim yönetimi</strong> alanında profesyonel bir DEM (Digital Enterprise Model) altyapısı sunmak amacıyla tasarlanmıştır.<br>
-BABOK prensiplerine göre özelleştirilebilir ve gerçek kurumsal veri kümeleriyle genişletilebilir.</p>
-<pre><code>
 ---
+
+### 2️⃣ Ortam Değişkeni ve API Anahtarı
+
+`.env` dosyanı oluştur:
+
+```bash
+GOOGLE_API_KEY="senin_gemini_api_anahtarın"
+```
+
+Proje içinde:
+
+```python
+from dotenv import load_dotenv
+load_dotenv()
+import google.generativeai as genai
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+```
+
+---
+
+## 📊 Veri Seti: PURE Annotate Dataset
+
+Model, Kaggle’daki **PURE Annotate Dataset** üzerinde eğitilmiştir.
+Her satır bir gereksinimi temsil eder:
+
+* Functional → “System shall export reports in PDF.”
+* Non-Functional → “System shall encrypt user data at rest.”
+
+Veri ön işleme adımları:
+
+* Temizlik, benzersizleştirme, kısa metinlerin elenmesi
+* Fonksiyonel / Fonksiyonel olmayan sınıflandırma (etiketli veya heuristik)
+* Embedding tablosu oluşturma
+
+```python
+df_clean["nfr"] = df_clean["sentence"].str.lower().str.contains(nfr_pat).astype(int)
+```
+
+---
+
+## 🔡 Embedding Aşaması (Gemini)
+
+Metinler anlamca karşılaştırılabilir hale getirilir.
+Bu işlem, her gereksinim cümlesini sayısal bir **embedding vektörüne** dönüştürür.
+
+```python
+emb = genai.embed_content(model="models/text-embedding-004", content=text)
+```
+
+---
+
+## 🧱 ChromaDB Knowledge Base
+
+Gereksinim embedding’leri **ChromaDB** üzerinde saklanır.
+Bu yapı, semantik benzerlik aramaları yapılmasını sağlar.
+
+```python
+collection = client.create_collection(name="requirements_kb", metadata={"hnsw:space": "cosine"})
+collection.add(ids=kb["id"].tolist(), documents=kb["text"].tolist(), embeddings=kb_embeddings)
+```
+
+---
+
+## 🧠 BABOK Uyumlu Prompt Tasarımı
+
+Model, aşağıdaki şablona göre çıktı üretir:
+
+| Alan                                    | Açıklama                                       |
+| --------------------------------------- | ---------------------------------------------- |
+| **Gereksinim Türü**                     | Business / Stakeholder / Solution / Transition |
+| **Doğa**                                | Functional veya Non-Functional                 |
+| **Rationale**                           | Gerekçe                                        |
+| **Business Value**                      | Katma değer                                    |
+| **Acceptance Criteria**                 | Ölçülebilir kabul kriterleri                   |
+| **MoSCoW**, **Kano**, **Cost of Delay** | Önceliklendirme metrikleri                     |
+
+> Model yanıtlarını Türkçe ve BABOK formatında üretir.
+
+---
+
+## 📈 Gereksinim Önceliklendirme Modülü
+
+Gereksinimler, otomatik olarak **RICE** ve **WSJF** metriklerine göre puanlanır.
+
+**RICE = (Reach × Impact × Confidence) / Effort**
+**WSJF = (Business Value + Time Criticality + Risk Reduction) / Job Size**
+
+Heuristik sinyaller:
+
+* `güvenlik`, `kvkk` → yüksek risk
+* `performans`, `ölçeklenebilirlik` → yüksek etki
+* `yedekleme`, `erişilebilirlik` → yüksek zaman kritiği
+
+---
+
+## 🔍 RAG (Retrieval-Augmented Generation) Pipeline
+
+1. **Retrieval (Getirme)** → Kullanıcı sorgusu embedding’e çevrilir ve ChromaDB’de benzer gereksinimler aranır.
+2. **Augmentation (Zenginleştirme)** → Bulunan örnekler modele verilir.
+3. **Generation (Üretim)** → Gemini, bağlama uygun yeni gereksinimler üretir.
+
+```python
+response = model.generate_content(prompt)
+```
+
+Bu sayede model hem veriye dayalı hem de yaratıcı içerik üretir.
+
+---
+
+## 💬 Gradio Arayüzü
+
+Gradio, kullanıcıdan proje açıklamasını alıp modeli çalıştırır.
+
+```python
+demo = gr.Interface(
+    fn=chatbot_interface,
+    inputs=gr.Textbox(lines=4, label="💬 Proje Açıklaması"),
+    outputs=gr.Markdown(label="📘 BABOK Uyumlu Gereksinim Önerileri"),
+    title="Business Requirement Chatbot (BABOK + RAG)",
+    description="PURE Dataset + BABOK Framework + Gemini RAG tabanlı iş analizi asistanı",
+)
+```
+
+Çalıştırmak için:
+
+```bash
+python app.py
+```
+
+---
+
+## 🧪 Test Çalışması
+
+```python
+test_query = "Günlük 5 milyon API çağrısını %99.9 başarı ile işleyebilmelidir."
+print(rag_response_babok(test_query))
+```
+
+---
+
+## 🗂️ Proje Yapısı
+
+```
+📦 business-requirement-chatbot/
+ ┣ 📂 data/
+ ┃ ┗ Pure_Annotate_Dataset.csv
+ ┣ 📂 src/
+ ┃ ┣ embeddings.py
+ ┃ ┣ generator.py
+ ┃ ┣ prioritization.py
+ ┃ ┗ ui.py
+ ┣ app.py
+ ┣ .env.example
+ ┗ README.md
+```
+
+---
+
+## 📘 Lisans
+
+Bu proje **MIT Lisansı** ile yayınlanmıştır.
+Katkılar açık kaynak prensiplerine uygun olmalıdır.
+
+---
+
+## 👩‍💻 Geliştirici Notu
+
+Bu sistem, profesyonel **DEM (Digital Enterprise Model)** yaklaşımıyla tasarlanmıştır.
+BABOK prensiplerini, RAG ve LLM tabanlı modern yaklaşımlarla birleştirir.
+Kurumsal iş analizi süreçlerinde **ölçeklenebilir, otomatik ve açıklanabilir gereksinim üretimi** sağlar.
+
+```
+
