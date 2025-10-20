@@ -42,11 +42,12 @@ Kısaca, bu chatbot bir iş analistinin yaptığı “gereksinim çıkarımı, a
 
 ---
 
-## 🚀 Kurulum
+## 🚀 Kurulum ve Gereksinimler
 
 ### 1️⃣ Gerekli Paketleri Yükle
 ```bash
-pip install -q "chromadb>=0.5.0" "google-generativeai>=0.7.2" "python-dotenv>=1.0.1" "gradio>=4.41.0" "pandas>=2.1.0"
+pip install -q chromadb sentence-transformers google-generativeai python-dotenv gradio pandas
+pip install -q sentence-transformers==2.2.2 transformers==4.41.2 huggingface_hub==0.22.2
 ````
 
 > 💡 Colab veya Kaggle kullanıyorsan ayrıca:
@@ -62,7 +63,7 @@ pip install -q "chromadb>=0.5.0" "google-generativeai>=0.7.2" "python-dotenv>=1.
 `.env` dosyanı oluştur:
 
 ```bash
-GOOGLE_API_KEY="senin_gemini_api_anahtarın"
+GOOGLE_API_KEY="your_api_key_here"
 ```
 
 Proje içinde:
@@ -73,6 +74,15 @@ load_dotenv()
 import google.generativeai as genai
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 ```
+
+3️⃣ Veri Kümesini Ekleyin
+
+📊 Proje, PURE Annotate Dataset (Kaggle) verisini kullanır:
+Kaggle Dataset Linki → [PURE Annotate Dataset](https://www.kaggle.com/datasets/computerscience3/public-requirementspure-dataset)
+
+Dosyayı indirdikten sonra proje dizinine şu şekilde yerleştirin:
+```bash
+/data/Pure_Annotate_Dataset.csv
 
 ---
 
